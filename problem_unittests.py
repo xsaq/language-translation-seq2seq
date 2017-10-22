@@ -278,7 +278,7 @@ def test_sentence_to_seq(sentence_to_seq):
     _print_success_message()
 
 
-def test_process_encoding_input(process_encoding_input):
+def test_process_encoding_input(process_encoding_input, message='verbose'):
     batch_size = 2
     seq_length = 3
     target_vocab_to_int = {'<GO>': 3}
@@ -297,7 +297,8 @@ def test_process_encoding_input(process_encoding_input):
                test_dec_input[1][0] == target_vocab_to_int['<GO>'],\
             'Missing GO Id.'
 
-    _print_success_message()
+    if message=='verbose':
+        _print_success_message()
 
 
 def test_decoding_layer_train(decoding_layer_train):
